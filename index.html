@@ -1510,12 +1510,11 @@
     const firebaseConfig = {
       apiKey: "AIzaSyCCW9u1BBa7draopIS0ZnVLpV0TcRDGQ0M",
       authDomain: "hexed-42069.firebaseapp.com",
+      databaseURL: "https://hexed-42069-default-rtdb.firebaseio.com",
       projectId: "hexed-42069",
       storageBucket: "hexed-42069.firebasestorage.app",
       messagingSenderId: "358734713369",
-      appId: "1:358734713369:web:43b3e02b4b52401a115088",
-      measurementId: "G-CN0HQ0HH8K",
-      databaseURL: "https://hexed-roster-default-rtdb.firebaseio.com"
+      appId: "1:358734713369:web:43b3e02b4b52401a115088"
     };
 
     // Initialize Firebase
@@ -1981,7 +1980,7 @@
         const uid = users[username];
         
         // Sign in with email/password (using the UID as email for simplicity)
-        await auth.signInWithEmailAndPassword(`${username.toLowerCase()}@tgn.com`, password);
+        await auth.signInWithEmailAndPassword(`${username.toLowerCase()}@hexed.com`, password);
         
         // Login successful - the auth state listener will handle the rest
         closeModal('loginModal');
@@ -2028,7 +2027,7 @@
         }
     
         // 2. Create auth user
-        const fakeEmail = `${username}@tgn.com`;
+        const fakeEmail = `${username}@hexed.com`;
         const userCredential = await auth.createUserWithEmailAndPassword(fakeEmail, password);
         const uid = userCredential.user.uid;
     
